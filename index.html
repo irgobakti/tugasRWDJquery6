@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+  <style>
+    /* Custom CSS */
+    /* You can add your own custom styles here */
+    body {
+      background-color: #f8f9fa;
+    }
+    .jumbotron {
+      background-image: url('background-image.jpg'); 
+      background-size: cover;
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .jumbotron:before {
+      content: '';
+      background: rgba(0,0,0,0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .jumbotron h1 {
+      font-size: 3.5rem;
+      animation: fadeInDown 1s ease-out;
+      position: relative;
+      z-index: 2;
+    }
+    .jumbotron p {
+      font-size: 1.5rem;
+      animation: fadeInUp 1s ease-out;
+      position: relative;
+      z-index: 2;
+    }
+    .logo {
+      width: 50px; /* Sesuaikan ukuran dengan kebutuhan Anda */
+      height: 50px;
+      border-radius: 50px;
+    }
+    /* Animasi tombol Learn More */
+    .btn-learn-more {
+      position: relative;
+      overflow: hidden;
+      transition: background-color 0.3s ease;
+      z-index: 2;
+    }
+    .btn-learn-more::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: all 0.5s ease;
+      border-radius: 50%;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+    }
+    .btn-learn-more:hover::before {
+      width: 0;
+      height: 0;
+    }
+    .btn-learn-more span {
+      position: relative;
+      z-index: 1;
+    }
+    /* Animasi Fade In Down */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Animasi Fade In Up */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Perubahan warna tombol saat dihover */
+    .btn-learn-more:hover {
+      background-color: #007bff;
+    }
+    .btn-learn-more:hover span {
+      color: #fff;
+    }
+    /* Efek parallax */
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      position: relative;
+    }
+    .parallax-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .parallax-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      z-index: 2;
+    }
+    /* Animasi scroll */
+    .scroll-animation {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .scroll-animation.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Efek bayangan */
+    .shadow {
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    /* Animasi ikon */
+    .icon {
+      transition: transform 0.3s ease;
+      
+    }
+    .icon:hover {
+      transform: scale(1.2);
+    }
+    /* Animasi ikon */
+    .icon:hover {
+      animation: bounce 0.5s ease;
+    }
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+        /* Efek bayangan pada kartu (card) */
+    .card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Efek bayangan pada judul (heading) */
+    h2 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img {
+  max-width: 100%; /* Maksimum lebar gambar adalah lebar kartu */
+  max-height: 100%; /* Maksimum tinggi gambar adalah tinggi kartu */
+  margin: auto; /* Pusatkan gambar secara horizontal */
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="logo.jpg" alt="Logo" class="logo"> <!-- Ganti 'logo.png' dengan nama file logo Anda -->
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="datatables.html">Datatables</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Parallax Section -->
+  <section class="parallax" style="background-image: url('https://blog.sigmaphoto.com/wp-content/uploads/2021/05/darren_fpl_featured.jpg');"> <!-- Ganti 'parallax-image.jpg' dengan URL gambar latar belakang parallax Anda -->
+    <div class="parallax-overlay"></div>
+    <div class="parallax-content fade-in">
+      <h1>Welcome to My Website</h1>
+      <p>This is a simple website created using Bootstrap.</p>
+      <a class="btn btn-primary btn-lg btn-learn-more" href="#" role="button"><span>Learn more</span></a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Why Choose Us?</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card shadow scroll-animation">
+          <div class="card-body text-center">
+            <img src="icon1.png" alt="Icon 1" class="icon">
+            <h5 class="card-title mt-3">Responsive Design</h5>
+            <p class="card-text">Our website is fully responsive, ensuring a great user experience on any device.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card shadow scroll-animation">
+          <div class="card-body text-center">
+            <img src="icon2.png" alt="Icon 2" class="icon">
+            <h5 class="card-title mt-3">Easy to Customize</h5>
+            <p class="card-text">Customize our website easily to suit your brand's unique style and needs.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card shadow scroll-animation">
+          <div class="card-body text-center">
+            <img src="icon3.png" alt="Icon 3" class="icon">
+            <h5 class="card-title mt-3">Fast Loading</h5>
+            <p class="card-text">Our website loads quickly, providing a smooth browsing experience for users.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      <span>&copy; 2024 My Website. All Rights Reserved.</span>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Animasi saat scroll
+    $(window).scroll(function() {
+      $('.scroll-animation').each(function() {
+        var elemPos = $(this).offset().top;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        if (scroll > elemPos - windowHeight + 100) {
+          $(this).addClass('show');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
